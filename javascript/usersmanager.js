@@ -9,7 +9,7 @@ $(document).ready(function(){
         confirmpasswordfield=$("#confirmpassword"),
         systemadminfield=$("#systemadmin"),
         mobilefield=$("#mobile"),
-        emailaddressfield=$("#emailaddress"),
+        emailfield=$("#email"),
         changepasswordonlogonfield=$("#changepasswordonlogin"),
         saveuserbutton=$("#saveuser"),
         notifications=$("#notifications")
@@ -48,7 +48,7 @@ $(document).ready(function(){
             firstname=firstnamefield.val(),
             lastname=lastnamefield.val(),
             mobile=mobilefield.val(),
-            emailaddress=emailaddressfield.val(),
+            email=emailfield.val(),
             systemadmin=systemadminfield.val()
 
         let userprivileges=[]
@@ -95,7 +95,7 @@ $(document).ready(function(){
                     systemadmin,
                     password,
                     mobile,
-                    emailaddress,
+                    email,
                     userprivileges
                 },
                 function(data){

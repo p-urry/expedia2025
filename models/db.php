@@ -19,7 +19,7 @@
             $this->password="";
             $this->charset="utf8mb4";
             try{
-                $dsn="mysql:host=".$this->servername.";dbname=".$this->databasename.";charset=".$this->characterset;
+                $dsn="mysql:host=".$this->servername.";dbname=".$this->databasename.";charset=".$this->charset;
                 $pdo=new PDO($dsn,$this->username,$this->password);
                 $pdo->Setattribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
                 return $pdo;

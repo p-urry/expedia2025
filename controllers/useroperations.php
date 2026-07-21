@@ -1,5 +1,16 @@
 <?php
-    require_once("../models/users.php");
+   
+   function generateRandomString($length = 20) {
+    $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    $charactersLength = strlen($characters);
+    $randomString = '';
+    for ($i = 0; $i < $length; $i++) {
+        $randomString .= $characters[random_int(0, $charactersLength - 1)];
+    }
+    return $randomString;
+}
+   
+require_once("../models/users.php");
     $user=new user();
     
     if(isset($_POST['saveuser'])){
@@ -13,7 +24,7 @@
         // has the password with salt
         $userpassword=hash('SHA256',$password.$salt);
         $mobile=$_POST['mobile'];
-        $email=$_POST['emailaddress'];
+        $email=$_POST['email'];
         $systemadmin=$_POST['systemadmin'];
         $response=$user->saveuser($userid,$username,$firstname,$lastname,$userpassword,$salt,$mobile,$email,$systemadmin);
         if($response['status']!=="exists"){
